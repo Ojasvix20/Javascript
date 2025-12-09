@@ -11,3 +11,7 @@ function b() {
   var x = 69;
   console.log(x);
 }
+
+var a = prompt("Enter No.")
+console.log(a);
+
