@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Habit Tracker</title>
+
+<style>
+    body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 20px;
+        background: #fff;
+    }
+
+    .printable-paper {
+        width: 100%;
+        max-width: 100%;
+        padding: 10px;
+        margin: 0 auto;
+    }
+
+    h2 {
+        margin: 10px 0 5px 5px;
+        font-size: 28px;
+    }
+
+    .tracker-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+    }
+
+    .tracker-table th, 
+    .tracker-table td {
+        border: 1px solid #000;
+        text-align: center;
+        vertical-align: middle;
+        padding: 0;
+    }
+
+    /* WIDTH ADDED HERE */
+    .task-name-col {
+        text-align: left;
+        padding-left: 8px;
+        font-weight: bold;
+        width: 150px;
+        height: 40px;
+    }
+
+    .number-header {
+        font-size: 11px;
+        width: 28px;
+        height: 28px;
+        background: #fafafa;
+    }
+
+    .checkbox-cell {
+        width: 28px;
+        height: 28px;
+        font-size: 0;
+    }
+
+    @page {
+        margin: 5mm;
+    }
+
+    @media print {
+        body {
+            background: white;
+        }
+        .printable-paper {
+            padding: 0;
+            margin: 0;
+        }
+    }
+</style>
+
+</head>
+<body>
+
+<div class="printable-paper">
+    <h2>HABIT TRACKER</h2>
+
+    <table class="tracker-table">
+        <thead>
+            <tr>
+                <th class="task-name-col">Tasks</th>
+
+                <script>
+                    for (let i = 1; i <= 31; i++) {
+                        document.write(`<th class="number-header">${i}</th>`);
+                    }
+                </script>
+
+            </tr>
+        </thead>
+
+        <tbody>
+            <script>
+                for (let r = 0; r < 12; r++) {
+                    document.write(`<tr><td class="task-name-col"></td>`);
+                    for (let c = 1; c <= 31; c++) {
+                        document.write(`<td class="checkbox-cell"></td>`);
+                    }
+                    document.write(`</tr>`);
+                }
+            </script>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
